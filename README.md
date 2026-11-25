@@ -1,24 +1,26 @@
 # FRONT
 
-**FRONT** is a font preview app with a live, self-updating catalogue. Browse 2,100+ open fonts, type your own text and see it rendered in every font, then download the weights you like — no build step, no backend, just one HTML file.
+**FRONT** یه برنامه پیش‌نمایش فونته با کاتالوگی زنده که خودش به‌روز می‌شه. بیش از ۲٬۱۰۰ فونت آزاد رو بگرد، متن دلخواهت رو بنویس و هم‌زمان توی همه فونت‌ها ببینش، بعد وزن‌هایی رو که پسندیدی دانلود کن — بدون مرحله ساخت، بدون بک‌اند، فقط یه فایل HTML.
 
-The name is the idea: **FONT** with an extra **R** is **FRONT** — a front window onto the world of fonts.
+اسمش خودِ ایده‌ست: **FONT** با یه **R** اضافه می‌شه **FRONT** — یه ویترین رو به دنیای فونت‌ها.
 
-## Features
+**دموی زنده:** https://wai490.github.io/front/
 
-- **Live catalogue** from the [Fontsource API](https://fontsource.org) — new fonts and updates appear automatically, nothing is curated by hand
-- **Persian / Arabic and Latin** fonts in one place, with search and filters (category, variable fonts)
-- **Persian fonts from GitHub** that are not in Fontsource (Shabnam, Sahel, Samim, Tanha, Gandom, Nahid, Vazir) with automatic version checks
-- **Custom preview text** with adjustable size and weight
-- **Per-weight downloads** (TTF / WOFF2 / WOFF) with mirror fallbacks
-- **Day / night mode**, fully responsive on phone and desktop
+## امکانات
 
-## Run it
+- **کاتالوگ زنده** از [Fontsource API](https://fontsource.org) — فونت‌های تازه و به‌روزرسانی‌ها خودکار میان، هیچی دستی چیده نشده
+- فونت‌های **فارسی/عربی و لاتین** در یک جا، با جستجو و فیلتر (دسته‌بندی، فونت‌های متغیر)
+- **فونت‌های فارسی گیت‌هابی** که در Fontsource نیستند (شبنم، ساحل، صمیم، تنها، گندم، ناهید، وزیر) با بررسی خودکار نسخه
+- **متن پیش‌نمایش دلخواه** با اندازه و وزن قابل تنظیم
+- **دانلود برای هر وزن** (TTF / WOFF2 / WOFF) با آینه‌های جایگزین
+- **حالت روز/شب** و کاملاً واکنش‌گرا روی گوشی و دسکتاپ
 
-Open `index.html` in a browser, or serve the folder with any static host (GitHub Pages works out of the box).
+## اجرا
 
-## Data and licenses
+کافیه `index.html` رو توی مرورگر باز کنی، یا پوشه رو با هر هاست استاتیکی بالا بیاری (GitHub Pages آماده‌ست).
 
-- Font catalogue and files: Fontsource / jsDelivr
-- The fonts themselves are distributed under their own licenses (mostly SIL Open Font License 1.1 — see each font's card)
-- The app code in this repository is released under the MIT License
+## داده و مجوزها
+
+- کاتالوگ و فایل فونت‌ها: Fontsource / jsDelivr
+- خود فونت‌ها تحت مجوز خودشون منتشر می‌شن (بیشترشان SIL Open Font License 1.1 — روی کارت هر فونت نوشته شده)
+- کد این برنامه در این ریپو تحت مجوز MIT منتشر شده
