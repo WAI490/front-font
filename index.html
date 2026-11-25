@@ -517,7 +517,7 @@
       <!-- ======= catalogue status ======= -->
       <div class="status" id="statusBar">
         <span class="dot" id="statusDot" aria-hidden="true"></span>
-        <span id="statusText">در حال خواندن کاتالوگ از Fontsource API…</span>
+        <span id="statusText">در حال خواندن کاتالوگ از Fontsource…</span>
         <button class="btn small" type="button" id="refreshBtn"><span class="spin" aria-hidden="true"></span>به‌روزرسانی کاتالوگ</button>
         <label for="intervalSel" style="font-size:.85rem;">تازه‌سازی خودکار:</label>
         <select id="intervalSel">
@@ -527,7 +527,7 @@
           <option value="21600000">هر ۶ ساعت</option>
           <option value="86400000">هر ۲۴ ساعت</option>
         </select>
-        <span style="font-size:.8rem; color:var(--ink-3);">تا وقتی این صفحه باز است، سرِ فاصلهٔ انتخابی دوباره از API چک می‌کند و فونت تازه یا نسخهٔ جدید را نشانت می‌دهد.</span>
+        <span style="font-size:.8rem; color:var(--ink-3);">تا وقتی این صفحه باز است، سرِ فاصلهٔ انتخابی دوباره از سایت چک می‌کند و فونت تازه یا نسخهٔ جدید را نشانت می‌دهد.</span>
       </div>
       <div class="diff-note" id="diffNote" role="status"></div>
       <div class="error-box" id="errorBox" role="alert"></div>
@@ -563,7 +563,7 @@
         <p>بیشتر فونت‌های این کاتالوگ مجوز <b>SIL OFL 1.1</b> دارند؛ یعنی دانلود، استفاده — حتی تجاری — و بازنشرشان آزاد است. مجوز هر فونت روی کارت خودش نوشته شده است.</p>
       </section>
 
-      <footer><bdi dir="ltr" lang="en"><strong>FrONT</strong></bdi> — کاتالوگ: Fontsource API • فایل‌ها: jsDelivr CDN • فونت‌های فارسی تکمیلی: مخزن‌های راستی‌کردار در گیت‌هاب</footer>
+      <footer><bdi dir="ltr" lang="en"><strong>FrONT</strong></bdi> — کاتالوگ: Fontsource • فایل‌ها: jsDelivr CDN • فونت‌های فارسی تکمیلی: مخزن‌های راستی‌کردار در گیت‌هاب</footer>
     </div>
 
     <!-- ======= download dialog ======= -->
@@ -977,7 +977,7 @@
       function loadCatalogue(isRefresh) {
         els.refresh.disabled = true;
         els.refresh.classList.add("busy");
-        if (!isRefresh) setStatus("", "در حال خواندن کاتالوگ از Fontsource API…");
+        if (!isRefresh) setStatus("", "در حال خواندن کاتالوگ از Fontsource…");
         return fetchJson(FS_LIST).then(function (data) {
           if (!Array.isArray(data)) throw new Error("bad payload");
           var prevBaseline = state.baseline;
@@ -1000,7 +1000,7 @@
           els.fsSkeleton.style.display = "none";
           els.error.classList.remove("show");
           setStatus("live",
-            "<strong>" + faNum(data.length) + " فونت</strong> از Fontsource API خوانده شد • آخرین دریافت: " + faTime(state.lastFetch));
+            "<strong>" + faNum(data.length) + " فونت</strong> از Fontsource خوانده شد • آخرین دریافت: " + faTime(state.lastFetch));
           buildCategories();
           renderFs();
           if (isRefresh) {
@@ -1021,7 +1021,7 @@
         }).catch(function (err) {
           if (!isRefresh && state.fonts.length === 0) {
             els.fsSkeleton.style.display = "none";
-            setStatus("err", "خواندن کاتالوگ از Fontsource API نشد.");
+            setStatus("err", "خواندن کاتالوگ از Fontsource نشد.");
             els.error.innerHTML = "ارتباط با سرور کاتالوگ برقرار نشد (" + esc(err.message) + "). " +
               "ممکن است این نشانی از شبکهٔ فعلی‌ات در دسترس نباشد. اینترنت را چک کن و «تلاش دوباره» را بزن." +
               ' <button class="btn small" type="button" id="retryBtn">تلاش دوباره</button>';
