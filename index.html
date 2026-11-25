@@ -1,0 +1,1350 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="پیش‌نمایش زندهٔ صدها فونت فارسی، عربی و لاتین با متن دلخواه و دانلود مستقیم هر وزن و فرمت؛ کاتالوگ زندهٔ Fontsource و فونت‌های فارسی گیت‌هاب." />
+    <meta name="theme-color" content="#f6f6f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101114" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="آزمایشگاه فونت — پیش‌نمایش و دانلود زنده" />
+    <meta property="og:description" content="متنت را بنویس، هم‌زمان در صدها فونت ببین و هرکدام را پسندیدی همان‌جا با وزن و فرمت دلخواه دانلود کن." />
+    <meta property="og:locale" content="fa_IR" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23bc3a17'/%3E%3Ctext x='32' y='45' font-size='32' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'%3EAa%3C/text%3E%3C/svg%3E" />
+    <title>آزمایشگاه فونت — پیش‌نمایش و دانلود زنده</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/700.css" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f6f6f4;
+        --surface: #ffffff;
+        --surface-2: #efefec;
+        --ink: #16181d;
+        --ink-2: #4c5261;
+        --ink-3: #7a8194;
+        --line: #dddcd6;
+        --line-strong: #c6c5bd;
+        --accent: #bc3a17;
+        --accent-ink: #ffffff;
+        --accent-soft: #fbe9e2;
+        --good: #146c43;
+        --good-soft: #e2f2e8;
+        --warn: #9a6206;
+        --warn-soft: #faf0d7;
+        --bad: #b3261e;
+        --bad-soft: #fbe7e5;
+        --chip: #ececea;
+        --shadow: 0 1px 2px rgba(20, 22, 29, .05), 0 8px 24px -18px rgba(20, 22, 29, .35);
+        --radius: 12px;
+      }
+      :root[data-theme="light"] { color-scheme: light; }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #101114;
+        --surface: #181a1f;
+        --surface-2: #1f2126;
+        --ink: #eceef1;
+        --ink-2: #b6bcc7;
+        --ink-3: #878e9d;
+        --line: #2a2c33;
+        --line-strong: #3a3d47;
+        --accent: #ff6b4a;
+        --accent-ink: #1a0f0b;
+        --accent-soft: #3a2019;
+        --good: #4cc38a;
+        --good-soft: #173327;
+        --warn: #e5b95c;
+        --warn-soft: #38300f;
+        --bad: #ff8a80;
+        --bad-soft: #3d1d1a;
+        --chip: #23252c;
+        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -18px rgba(0, 0, 0, .8);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #101114;
+          --surface: #181a1f;
+          --surface-2: #1f2126;
+          --ink: #eceef1;
+          --ink-2: #b6bcc7;
+          --ink-3: #878e9d;
+          --line: #2a2c33;
+          --line-strong: #3a3d47;
+          --accent: #ff6b4a;
+          --accent-ink: #1a0f0b;
+          --accent-soft: #3a2019;
+          --good: #4cc38a;
+          --good-soft: #173327;
+          --warn: #e5b95c;
+          --warn-soft: #38300f;
+          --bad: #ff8a80;
+          --bad-soft: #3d1d1a;
+          --chip: #23252c;
+          --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 28px -18px rgba(0, 0, 0, .8);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Vazirmatn", "Segoe UI", Tahoma, system-ui, sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+      button, select, input, textarea { font: inherit; color: inherit; }
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      a { color: var(--accent); }
+      :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+      .wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px 64px; }
+
+      /* ---------- control deck ---------- */
+      .deck {
+        position: sticky; top: 0; z-index: 40;
+        background: var(--bg);
+        padding: 14px 0 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      .deck h1 {
+        font-size: 1.06rem; font-weight: 700; margin: 0 0 2px;
+        letter-spacing: -.01em;
+      }
+      .deck-head {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      }
+      .deck-head h1 { margin: 0; }
+      .theme-toggle {
+        flex: none; display: inline-flex; align-items: center; gap: 8px;
+        border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+        border-radius: 999px; padding: 5px 14px 5px 16px; cursor: pointer;
+        font-weight: 600; font-size: .88rem; line-height: 1.4; min-height: 2.5rem;
+        box-shadow: var(--shadow);
+      }
+      .theme-toggle:hover { border-color: var(--ink-3); }
+      .theme-toggle svg { flex: none; display: block; }
+      .theme-toggle .icon-sun { display: none; }
+      :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+      :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+        :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+      }
+      body, .deck, .card, .sources, dialog, .sliders { transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+      @media (prefers-reduced-motion: reduce) {
+        body, .deck, .card, .sources, dialog, .sliders { transition: none; }
+      }
+      .deck .sub { color: var(--ink-2); font-size: .86rem; margin: 0 0 12px; }
+      .sample-row { display: flex; gap: 10px; flex-wrap: wrap; }
+      .sample-box {
+        flex: 1 1 340px; display: flex; flex-direction: column; gap: 6px;
+      }
+      .sample-box label, .ctl label { font-size: .8rem; color: var(--ink-2); font-weight: 600; }
+      #sampleText {
+        width: 100%; padding: 10px 14px; font-size: 1.15rem; line-height: 1.6;
+        background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius);
+      }
+      .presets { display: flex; gap: 6px; flex-wrap: wrap; }
+      .chip {
+        border: 1px solid var(--line); background: var(--chip); color: var(--ink-2);
+        border-radius: 999px; padding: 4px 14px; cursor: pointer; font-size: .85rem; min-height: 2.25rem;
+      }
+      .chip:hover { border-color: var(--line-strong); color: var(--ink); }
+      .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+      .sliders {
+        display: flex; gap: 18px; flex-wrap: wrap; align-items: end;
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 10px 14px;
+      }
+      .ctl { display: flex; flex-direction: column; gap: 4px; }
+      .ctl output { font-size: .8rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+      input[type="range"] { width: 170px; accent-color: var(--accent); min-height: 2.25rem; }
+      select {
+        background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px;
+        padding: 4px 10px; max-width: 100%;
+      }
+      .toolbar {
+        display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin-top: 10px;
+      }
+      .tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+      .tab {
+        border: 1px solid var(--line-strong); background: var(--surface); border-radius: 999px;
+        padding: 4px 18px; cursor: pointer; font-weight: 600; font-size: .92rem;
+      }
+      .tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .search-box { flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; }
+      #searchInput {
+        width: 100%; padding: 7px 14px; background: var(--surface);
+        border: 1px solid var(--line-strong); border-radius: 999px;
+      }
+
+      /* ---------- status / refresh ---------- */
+      .status {
+        display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+        margin: 16px 0 4px; font-size: .88rem; color: var(--ink-2);
+      }
+      .status .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-3); flex: none; }
+      .status .dot.live { background: var(--good); }
+      .status .dot.err { background: var(--bad); }
+      .status strong { color: var(--ink); }
+      .btn {
+        border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+        border-radius: 8px; padding: 5px 16px; cursor: pointer; font-weight: 600; font-size: .9rem;
+        display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+      }
+      .btn:hover { border-color: var(--ink-3); }
+      .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .btn.primary:hover { filter: brightness(1.07); }
+      .btn:disabled { opacity: .55; cursor: wait; }
+      .btn.small { padding: 2px 12px; font-size: .84rem; min-height: 2.25rem; }
+      .spin { width: 14px; height: 14px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: sp 0.8s linear infinite; display: none; }
+      .busy .spin { display: inline-block; }
+      @keyframes sp { to { transform: rotate(360deg); } }
+      @media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+      .diff-note {
+        display: none; margin: 10px 0 0; padding: 10px 14px; border-radius: var(--radius);
+        background: var(--good-soft); color: var(--ink); font-size: .9rem; border: 1px solid var(--line);
+      }
+      .diff-note.show { display: block; }
+      .error-box {
+        display: none; margin: 14px 0; padding: 14px 16px; border-radius: var(--radius);
+        background: var(--bad-soft); border: 1px solid var(--line); font-size: .92rem;
+      }
+      .error-box.show { display: block; }
+
+      .noscript-note {
+        margin: 16px 0; padding: 14px 16px; border-radius: var(--radius);
+        background: var(--warn-soft); border: 1px solid var(--line); font-size: .92rem;
+      }
+
+      /* ---------- sections & grid ---------- */
+      section { margin-top: 34px; }
+      .sec-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+      .sec-head h2 { font-size: 1.2rem; margin: 0; letter-spacing: -.01em; }
+      .sec-head .count { color: var(--ink-3); font-size: .88rem; font-variant-numeric: tabular-nums; }
+      .sec-desc { color: var(--ink-2); font-size: .9rem; margin: 0 0 16px; max-width: 75ch; }
+      .grid {
+        display: grid; gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      }
+      @media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+
+      .card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 10px;
+        min-width: 0;
+      }
+      .card-top { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+      .fam { font-weight: 700; font-size: 1.02rem; direction: ltr; unicode-bidi: isolate; }
+      .fam-fa { color: var(--ink-2); font-size: .9rem; }
+      .badge {
+        font-size: .72rem; font-weight: 700; border-radius: 999px; padding: 1px 9px;
+        background: var(--chip); color: var(--ink-2); white-space: nowrap;
+      }
+      .badge.new { background: var(--good-soft); color: var(--good); }
+      .badge.upd { background: var(--warn-soft); color: var(--warn); }
+      .badge.acc { background: var(--accent-soft); color: var(--accent); }
+      .preview {
+        border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line);
+        padding: 14px 2px; min-height: 96px; display: flex; align-items: center;
+        overflow-wrap: anywhere; line-height: 1.5;
+      }
+      .preview.pending { color: var(--ink-3); font-size: .95rem !important; font-weight: 400 !important; }
+      .meta { display: flex; gap: 6px 14px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-3); }
+      .meta b { color: var(--ink-2); font-weight: 600; }
+      .card-actions { display: flex; gap: 8px; margin-top: auto; flex-wrap: wrap; }
+      .load-note { font-size: .78rem; color: var(--bad); display: none; }
+      .card.failed .load-note { display: block; }
+      .load-note .btn { margin-inline-start: 6px; vertical-align: middle; }
+      .more-row { display: flex; justify-content: center; margin-top: 20px; }
+      .empty { color: var(--ink-3); padding: 28px 0; text-align: center; display: none; }
+      .empty.show { display: block; }
+      .skeleton { color: var(--ink-3); padding: 22px 0; }
+
+      /* ---------- dialog ---------- */
+      dialog {
+        border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); color: var(--ink);
+        max-width: min(680px, calc(100vw - 28px)); width: 100%; padding: 0;
+        max-height: calc(100dvh - 40px);
+      }
+      dialog::backdrop { background: rgba(10, 10, 14, .5); }
+      .dlg-body { padding: 0; overflow: auto; max-height: calc(100dvh - 40px); }
+      .dlg-head {
+        position: sticky; top: 0; z-index: 3;
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        background: var(--surface); border-bottom: 1px solid var(--line);
+        padding: 16px 24px 12px;
+      }
+      .dlg-head-main { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; min-width: 0; }
+      .dlg-head h3 { margin: 0; font-size: 1.25rem; direction: ltr; unicode-bidi: isolate; }
+      .dlg-close-x {
+        flex: none; width: 2.5rem; height: 2.5rem; min-height: 2.5rem;
+        display: inline-flex; align-items: center; justify-content: center;
+        border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+        border-radius: 999px; cursor: pointer; padding: 0;
+      }
+      .dlg-close-x:hover { border-color: var(--ink-3); background: var(--surface-2); }
+      .dlg-main { padding: 4px 24px 8px; }
+      .dlg-preview {
+        margin: 14px 0; padding: 16px; background: var(--surface-2); border-radius: var(--radius);
+        font-size: 2rem; line-height: 1.5; overflow-wrap: anywhere;
+      }
+      .dlg-meta { font-size: .88rem; color: var(--ink-2); display: grid; gap: 3px; margin-bottom: 6px; }
+      .dlg-meta b { color: var(--ink); }
+      .dl-section-head {
+        display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        margin: 10px 0 4px; padding-top: 14px; border-top: 1px solid var(--line);
+      }
+      .dl-section-head h4 { margin: 0; font-size: .95rem; font-weight: 700; }
+      .dl-toggle {
+        flex: none; display: inline-flex; align-items: center; gap: 7px;
+        border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+        border-radius: 999px; padding: 4px 14px; cursor: pointer; font-weight: 600; font-size: .85rem;
+        min-height: 2.5rem;
+      }
+      .dl-toggle:hover { border-color: var(--ink-3); }
+      .dl-toggle svg { flex: none; transition: transform .18s ease; }
+      .dl-toggle[aria-expanded="false"] svg { transform: rotate(180deg); }
+      @media (prefers-reduced-motion: reduce) { .dl-toggle svg { transition: none; } }
+      #dlgContent.collapsed { display: none; }
+      .dl-collapsed-note {
+        display: none; margin: 4px 0 10px; padding: 10px 12px;
+        background: var(--surface-2); border-radius: 8px; color: var(--ink-2); font-size: .86rem;
+      }
+      .dl-collapsed-note.show { display: block; }
+      .dl-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+      .dl-table th, .dl-table td { padding: 7px 6px; border-bottom: 1px solid var(--line); text-align: right; }
+      .dl-table th { color: var(--ink-3); font-weight: 600; font-size: .8rem; }
+      .dl-links { display: flex; gap: 6px; flex-wrap: wrap; }
+      .dlg-foot {
+        position: sticky; bottom: 0; z-index: 3;
+        display: flex; gap: 8px; justify-content: flex-start; flex-wrap: wrap;
+        background: var(--surface); border-top: 1px solid var(--line);
+        padding: 12px 24px; margin-top: 10px;
+      }
+      .dlg-loading { color: var(--ink-3); padding: 12px 0; }
+
+      /* ---------- sources ---------- */
+      .sources {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 20px 22px; box-shadow: var(--shadow);
+      }
+      .sources h2 { margin: 0 0 10px; font-size: 1.12rem; }
+      .sources p, .sources li { font-size: .92rem; color: var(--ink-2); }
+      .sources ul { margin: 6px 0; padding-inline-start: 20px; }
+      .sources code {
+        direction: ltr; unicode-bidi: isolate; font-family: ui-monospace, "Courier New", monospace;
+        font-size: .82em; background: var(--surface-2); padding: 1px 6px; border-radius: 5px;
+        overflow-wrap: anywhere; word-break: break-all;
+      }
+      footer { margin-top: 34px; color: var(--ink-3); font-size: .82rem; text-align: center; }
+
+      /* ---------- mobile / phone layout ---------- */
+      .deck-toggle {
+        display: none; width: 100%; margin-top: 10px;
+        align-items: center; justify-content: space-between; gap: 8px;
+        border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
+        border-radius: 8px; padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: .9rem;
+        min-height: 2.75rem;
+      }
+      .deck-toggle svg { flex: none; transition: transform .18s ease; }
+      .deck.open .deck-toggle svg { transform: rotate(180deg); }
+      button, .chip, .tab, select, input { touch-action: manipulation; }
+      body { -webkit-tap-highlight-color: transparent; }
+
+      @media (max-width: 720px) {
+        .wrap {
+          padding-top: 0; padding-bottom: 48px;
+          padding-left: max(12px, env(safe-area-inset-left));
+          padding-right: max(12px, env(safe-area-inset-right));
+        }
+        /* compact sticky deck: title + sample text + tabs + search stay,
+           everything else folds behind the toggle */
+        .deck { padding: calc(10px + env(safe-area-inset-top, 0px)) 0 8px; }
+        .deck h1 { font-size: .98rem; margin: 0; }
+        .deck-head { gap: 8px; }
+        .theme-toggle { min-height: 2.75rem; padding: 6px 14px; font-size: .85rem; }
+        .deck .sub { display: none; }
+        .sample-row { flex-direction: column; gap: 8px; margin-top: 8px; }
+        .sample-box { flex: none; }
+        #sampleText { font-size: 1rem; padding: 9px 12px; }
+        .deck-toggle { display: flex; }
+        .deck:not(.open) .presets,
+        .deck:not(.open) .sliders,
+        .deck:not(.open) .toolbar .ctl,
+        .deck:not(.open) #varToggle { display: none; }
+        .presets { margin-top: 2px; }
+        .presets .chip { flex: 1 1 auto; }
+        .sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; padding: 10px 12px; margin-top: 10px; }
+        .sliders .ctl { min-width: 0; }
+        .sliders .ctl output { font-size: .72rem; }
+        input[type="range"] { width: 100%; }
+        .toolbar { gap: 8px; margin-top: 8px; }
+        .tabs { width: 100%; }
+        .tab { flex: 1 1 0; padding: 6px 4px; text-align: center; font-size: .88rem; min-height: 2.75rem; }
+        .search-box { flex: 1 1 100%; }
+        #searchInput { padding: 9px 14px; min-height: 2.75rem; }
+        .toolbar .ctl { flex: 1 1 calc(50% - 4px); min-width: 0; }
+        .toolbar .ctl select { width: 100%; min-height: 2.75rem; }
+        #varToggle { width: 100%; min-height: 2.75rem; }
+
+        .status { gap: 8px; margin: 12px 0 2px; font-size: .83rem; }
+        .status #refreshBtn { flex: 1 1 auto; justify-content: center; min-height: 2.75rem; }
+        .status select { flex: 1 1 auto; min-height: 2.75rem; }
+        .status > span:last-child { flex: 1 1 100%; font-size: .75rem !important; }
+
+        section { margin-top: 26px; }
+        .sec-head h2 { font-size: 1.08rem; }
+        .sec-desc { font-size: .86rem; margin-bottom: 12px; }
+        .grid { grid-template-columns: 1fr; gap: 10px; }
+        .card { padding: 13px 14px 12px; gap: 8px; }
+        .preview { min-height: 72px; padding: 10px 2px; }
+        .meta { font-size: .76rem; gap: 4px 10px; }
+        .card-actions .btn { flex: 1 1 0; justify-content: center; text-align: center; min-height: 2.75rem; }
+        .more-row .btn { width: 100%; justify-content: center; min-height: 2.75rem; }
+
+        dialog { max-width: calc(100vw - 16px); border-radius: 14px; }
+        .dlg-body { padding: 0; }
+        .dlg-head { padding: 14px 16px 10px; }
+        .dlg-main { padding: 2px 16px 6px; }
+        .dlg-foot { padding: 10px 16px; }
+        .dl-toggle { min-height: 2.75rem; padding: 6px 16px; }
+        .dlg-close-x { width: 2.75rem; height: 2.75rem; min-height: 2.75rem; }
+        .dlg-preview { font-size: 1.55rem; padding: 12px; }
+        .dl-table { font-size: .85rem; }
+        .dl-table th, .dl-table td { padding: 8px 2px; }
+        .dl-links { flex-direction: column; align-items: stretch; }
+        .dl-links .btn { justify-content: center; min-height: 2.75rem; }
+        .dlg-foot .btn { flex: 1 1 auto; justify-content: center; min-height: 2.75rem; }
+
+        .sources { padding: 16px; }
+        .sources p, .sources li { font-size: .86rem; }
+      }
+      @media (max-width: 380px) {
+        .sliders { grid-template-columns: 1fr; }
+        .toolbar .ctl { flex-basis: 100%; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <noscript><p class="noscript-note">برای دیدن کاتالوگ فونت‌ها و پیش‌نمایش‌ها، جاوااسکریپت مرورگرت را فعال کن.</p></noscript>
+
+      <!-- ======= control deck ======= -->
+      <div class="deck">
+        <div class="deck-head">
+          <h1>آزمایشگاه فونت</h1>
+          <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false" aria-label="رفتن به حالت شب">
+            <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.6 14.2A8.5 8.5 0 0 1 9.8 3.4a.6.6 0 0 0-.8-.8 10.5 10.5 0 1 0 12.4 12.4.6.6 0 0 0-.8-.8Z" fill="currentColor"/></svg>
+            <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M19.4 4.6l-1.6 1.6M6.2 17.8l-1.6 1.6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            <span id="themeLabel">حالت شب</span>
+          </button>
+        </div>
+        <p class="sub">متنت را بنویس، هم‌زمان در صدها فونت ببین، و هرکدام را پسندیدی همان‌جا دانلود کن. کاتالوگ زنده است و خودش به‌روز می‌شود؛ فونت تازه یا نسخهٔ جدید که بیاید، روی کارتش برچسب می‌خورد.</p>
+        <div class="sample-row">
+          <div class="sample-box">
+            <label for="sampleText">متن پیش‌نمایش</label>
+            <input id="sampleText" type="text" value="زندگی زیباست؛ این متن نمونهٔ پیش‌نمایش فونت است ۱۲۳۴۵۶۷۸۹۰" autocomplete="off" />
+            <div class="presets" role="group" aria-label="متن‌های آماده">
+              <button class="chip" type="button" data-preset="زندگی زیباست؛ این متن نمونهٔ پیش‌نمایش فونت است ۱۲۳۴۵۶۷۸۹۰">فارسی</button>
+              <button class="chip" type="button" data-preset="The quick brown fox jumps over the lazy dog 1234567890">English</button>
+              <button class="chip" type="button" data-preset="سلام دنیا! Hello World — ۱۲۳۴۵۶۷۸۹۰ و 1234567890">هر دو</button>
+              <button class="chip" type="button" data-preset="ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی">الفبای فارسی</button>
+            </div>
+          </div>
+          <div class="sliders">
+            <div class="ctl">
+              <label for="sizeRange">اندازهٔ پیش‌نمایش</label>
+              <input id="sizeRange" type="range" min="16" max="64" step="2" value="30" />
+              <output id="sizeOut" for="sizeRange">۳۰ پیکسل</output>
+            </div>
+            <div class="ctl">
+              <label for="weightSel">وزن نمایش</label>
+              <select id="weightSel">
+                <option value="400">معمولی (۴۰۰)</option>
+                <option value="100">۱۰۰ — نازک</option>
+                <option value="300">۳۰۰ — سبک</option>
+                <option value="500">۵۰۰ — متوسط</option>
+                <option value="700">۷۰۰ — ضخیم</option>
+                <option value="900">۹۰۰ — سیاه</option>
+              </select>
+              <output>اگر فونتی آن وزن را نداشته باشد، نزدیک‌ترینش می‌آید.</output>
+            </div>
+          </div>
+        </div>
+        <button class="deck-toggle" type="button" id="deckToggle" aria-expanded="false" aria-controls="toolbarRow">
+          <span>تنظیمات پیش‌نمایش و فیلترهای بیشتر</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="toolbar" id="toolbarRow">
+          <div class="tabs" role="tablist" aria-label="دستهٔ خط">
+            <button class="tab" type="button" role="tab" data-tab="arabic" aria-selected="true">فارسی و عربی</button>
+            <button class="tab" type="button" role="tab" data-tab="latin" aria-selected="false">لاتین</button>
+            <button class="tab" type="button" role="tab" data-tab="all" aria-selected="false">همه</button>
+          </div>
+          <div class="search-box">
+            <input id="searchInput" type="search" placeholder="جستجوی نام فونت… (مثلاً Vazirmatn یا شبنم)" aria-label="جستجوی نام فونت" />
+          </div>
+          <div class="ctl">
+            <label for="catSel">دسته‌بندی</label>
+            <select id="catSel"><option value="">همهٔ دسته‌ها</option></select>
+          </div>
+          <div class="ctl">
+            <label for="sortSel">مرتب‌سازی</label>
+            <select id="sortSel">
+              <option value="name">نام (الفبا)</option>
+              <option value="modified">تازه‌ترین به‌روزرسانی</option>
+              <option value="weights">بیشترین وزن</option>
+            </select>
+          </div>
+          <button class="chip" type="button" id="varToggle" aria-pressed="false">فقط فونت‌های متغیر (Variable)</button>
+        </div>
+      </div>
+
+      <!-- ======= catalogue status ======= -->
+      <div class="status" id="statusBar">
+        <span class="dot" id="statusDot" aria-hidden="true"></span>
+        <span id="statusText">در حال خواندن کاتالوگ از Fontsource API…</span>
+        <button class="btn small" type="button" id="refreshBtn"><span class="spin" aria-hidden="true"></span>به‌روزرسانی کاتالوگ</button>
+        <label for="intervalSel" style="font-size:.85rem;">تازه‌سازی خودکار:</label>
+        <select id="intervalSel">
+          <option value="0">خاموش</option>
+          <option value="1800000">هر ۳۰ دقیقه</option>
+          <option value="3600000">هر ۱ ساعت</option>
+          <option value="21600000">هر ۶ ساعت</option>
+          <option value="86400000">هر ۲۴ ساعت</option>
+        </select>
+        <span style="font-size:.8rem; color:var(--ink-3);">تا وقتی این صفحه باز است، سرِ فاصلهٔ انتخابی دوباره از API چک می‌کند و فونت تازه یا نسخهٔ جدید را نشانت می‌دهد.</span>
+      </div>
+      <div class="diff-note" id="diffNote" role="status"></div>
+      <div class="error-box" id="errorBox" role="alert"></div>
+
+      <!-- ======= Fontsource catalogue ======= -->
+      <section aria-labelledby="fsTitle">
+        <div class="sec-head">
+          <h2 id="fsTitle">کاتالوگ زندهٔ فونت‌ها</h2>
+          <span class="count" id="fsCount"></span>
+        </div>
+        <p class="sec-desc">کاتالوگ کامل فونت‌های <bdi>Fontsource</bdi> با نسخه و تاریخ آخرین تغییرِ هر فونت. روی هر فونت «دانلود» را بزن تا وزن‌ها و فرمت‌ها (TTF و WOFF2 و WOFF) را ببینی و همان‌جا بگیری.</p>
+        <div class="skeleton" id="fsSkeleton">در حال بارگذاری کاتالوگ…</div>
+        <div class="grid" id="fsGrid"></div>
+        <div class="empty" id="fsEmpty">فونتی با این فیلترها پیدا نشد.</div>
+        <div class="more-row"><button class="btn" type="button" id="moreBtn" style="display:none;">نمایش فونت‌های بیشتر</button></div>
+      </section>
+
+      <!-- ======= GitHub Persian watchlist ======= -->
+      <section aria-labelledby="ghTitle">
+        <div class="sec-head">
+          <h2 id="ghTitle">فونت‌های فارسی گیت‌هاب</h2>
+          <span class="count" id="ghCount"></span>
+        </div>
+        <p class="sec-desc">چند فونت فارسی معروف — شبنم، ساحل، صمیم و بقیه — در کاتالوگ Fontsource نیستند؛ این‌ها از مخزن‌های گیت‌هاب راستی‌کردار می‌آیند. نسخهٔ هر مخزن خودکار بررسی می‌شود تا پیش‌نمایش و دانلود همیشه با تازه‌ترین نسخه کار کند.</p>
+        <div class="grid" id="ghGrid"></div>
+        <div class="empty" id="ghEmpty">مخزن‌های گیت‌هاب الان در دسترس نیستند.</div>
+      </section>
+
+      <!-- ======= sources ======= -->
+      <section class="sources" aria-labelledby="srcTitle">
+        <h2 id="srcTitle">منابع و مجوزها</h2>
+        <p>کاتالوگ فونت‌ها از <a href="https://fontsource.org" target="_blank" rel="noopener">Fontsource</a> خوانده می‌شود و فایل‌ها از شبکهٔ تحویل محتوای <bdi>jsDelivr</bdi> می‌رسند. فونت‌های فارسی بخش دوم از <a href="https://github.com/rastikerdar" target="_blank" rel="noopener">مخزن‌های راستی‌کردار در گیت‌هاب</a> گرفته می‌شوند — خانوادهٔ وزیرمتن، شبنم، ساحل، صمیم، تنها، گندم و ناهید.</p>
+        <p>بیشتر فونت‌های این کاتالوگ مجوز <b>SIL OFL 1.1</b> دارند؛ یعنی دانلود، استفاده — حتی تجاری — و بازنشرشان آزاد است. مجوز هر فونت روی کارت خودش نوشته شده است.</p>
+      </section>
+
+      <footer>کاتالوگ: Fontsource API • فایل‌ها: jsDelivr CDN • فونت‌های فارسی تکمیلی: مخزن‌های راستی‌کردار در گیت‌هاب</footer>
+    </div>
+
+    <!-- ======= download dialog ======= -->
+    <dialog id="dlDialog" aria-labelledby="dlgFam">
+      <div class="dlg-body">
+        <div class="dlg-head">
+          <div class="dlg-head-main">
+            <h3 id="dlgFam">—</h3>
+            <span class="badge acc" id="dlgSrc"></span>
+          </div>
+          <button class="dlg-close-x" type="button" id="dlgCloseX" aria-label="بستن پنجرهٔ دانلود">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="dlg-main">
+          <div class="dlg-preview" id="dlgPreview"></div>
+          <div class="dlg-meta" id="dlgMeta"></div>
+          <div class="dl-section-head">
+            <h4 id="dlSectionTitle">گزینه‌های دانلود</h4>
+            <button class="dl-toggle" type="button" id="dlCollapseBtn" aria-expanded="true" aria-controls="dlgContent">
+              <span id="dlCollapseLabel">جمع کردن</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 10l5-5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <p class="dl-collapsed-note" id="dlCollapsedNote">گزینه‌های دانلود جمع شده‌اند — برای دیدن وزن‌ها و فرمت‌ها «نمایش گزینه‌ها» را بزن.</p>
+          <div id="dlgContent"></div>
+        </div>
+        <div class="dlg-foot">
+          <button class="btn primary" type="button" id="dlgClose">بستن</button>
+          <a class="btn" id="dlgPageLink" href="#" target="_blank" rel="noopener" style="display:none;">صفحهٔ فونت در Fontsource</a>
+          <a class="btn" id="dlgRepoLink" href="#" target="_blank" rel="noopener" style="display:none;">مخزن گیت‌هاب</a>
+        </div>
+      </div>
+    </dialog>
+
+    <script>
+    (function () {
+      "use strict";
+
+      /* ---------- day / night theme toggle ---------- */
+      var rootEl = document.documentElement;
+      var themeToggleBtn = document.getElementById("themeToggle");
+      var themeLabelEl = document.getElementById("themeLabel");
+      function systemTheme() {
+        return (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+      }
+      function effectiveTheme() {
+        return rootEl.getAttribute("data-theme") || systemTheme();
+      }
+      function syncThemeButton() {
+        var isDark = effectiveTheme() === "dark";
+        if (themeLabelEl) themeLabelEl.textContent = isDark ? "حالت روز" : "حالت شب";
+        if (themeToggleBtn) {
+          themeToggleBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+          themeToggleBtn.setAttribute("aria-label", isDark ? "رفتن به حالت روز" : "رفتن به حالت شب");
+        }
+      }
+      if (!rootEl.getAttribute("data-theme")) {
+        rootEl.setAttribute("data-theme", systemTheme());
+      }
+      syncThemeButton();
+      if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", function () {
+          var next = effectiveTheme() === "dark" ? "light" : "dark";
+          rootEl.setAttribute("data-theme", next);
+          syncThemeButton();
+        });
+      }
+
+      var FS_LIST = "https://api.fontsource.org/v1/fonts";
+      var FS_DETAIL = "https://api.fontsource.org/v1/fonts/";
+      var NPM_CSS = "https://cdn.jsdelivr.net/npm/@fontsource/";
+      var JSD_DATA = "https://data.jsdelivr.com/v1/packages/gh/rastikerdar/";
+      var JSD_CDN = "https://cdn.jsdelivr.net/gh/rastikerdar/";
+      var PAGE_SIZE = 48;
+
+      var FA_NAMES = {
+        "shabnam-font": "شبنم", "sahel-font": "ساحل", "samim-font": "صمیم",
+        "tanha-font": "تنها", "gandom-font": "گندم", "nahid-font": "ناهید",
+        "vazir-font": "وزیر (قدیمی)"
+      };
+      var GH_REPOS = ["shabnam-font", "sahel-font", "samim-font", "tanha-font", "gandom-font", "nahid-font", "vazir-font"];
+
+      var state = {
+        fonts: [],            // Fontsource list records
+        byId: {},
+        baseline: null,       // Map id -> lastModified (first successful load this session)
+        ghBaseline: {},       // repo -> version
+        newIds: {},           // id -> true (appeared after baseline)
+        updIds: {},           // id -> true (lastModified changed after baseline)
+        ghNewVer: {},         // repo -> new version
+        gh: {},               // repo -> {version, files|null, error}
+        tab: "arabic",
+        query: "",
+        category: "",
+        sort: "name",
+        varOnly: false,
+        shown: PAGE_SIZE,
+        weight: 400,
+        size: 30,
+        text: "",
+        timer: null,
+        lastFetch: null,
+        detailCache: {}
+      };
+
+      var $ = function (id) { return document.getElementById(id); };
+      var els = {
+        sample: $("sampleText"), size: $("sizeRange"), sizeOut: $("sizeOut"),
+        weight: $("weightSel"), search: $("searchInput"), cat: $("catSel"),
+        sort: $("sortSel"), varToggle: $("varToggle"),
+        dot: $("statusDot"), status: $("statusText"), refresh: $("refreshBtn"),
+        interval: $("intervalSel"), diff: $("diffNote"), error: $("errorBox"),
+        fsGrid: $("fsGrid"), fsCount: $("fsCount"), fsEmpty: $("fsEmpty"),
+        fsSkeleton: $("fsSkeleton"), more: $("moreBtn"),
+        ghGrid: $("ghGrid"), ghCount: $("ghCount"), ghEmpty: $("ghEmpty"),
+        dlg: $("dlDialog"), dlgFam: $("dlgFam"), dlgSrc: $("dlgSrc"),
+        dlgPreview: $("dlgPreview"), dlgMeta: $("dlgMeta"), dlgContent: $("dlgContent"),
+        dlgPage: $("dlgPageLink"), dlgRepo: $("dlgRepoLink")
+      };
+
+      function faNum(n) { return Number(n).toLocaleString("fa-IR"); }
+      function faDate(iso) {
+        if (!iso) return "—";
+        var d = new Date(iso + "T00:00:00");
+        if (isNaN(d)) return iso;
+        try { return d.toLocaleDateString("fa-IR"); } catch (e) { return iso; }
+      }
+      function faTime(d) {
+        try { return d.toLocaleTimeString("fa-IR", { hour: "2-digit", minute: "2-digit" }); }
+        catch (e) { return d.toTimeString().slice(0, 5); }
+      }
+      function esc(s) {
+        return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+        });
+      }
+      function hasArabic(s) { return /[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFC]/.test(s || ""); }
+      function fetchJson(url) {
+        return fetch(url, { headers: { "Accept": "application/json" } }).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        });
+      }
+
+      /* ---------- file download (fetched as a Blob and saved with its filename) ---------- */
+      function fetchBlob(url, timeoutMs) {
+        return new Promise(function (resolve, reject) {
+          var done = false;
+          var timer = setTimeout(function () {
+            if (done) return; done = true; reject(new Error("timeout"));
+          }, timeoutMs);
+          fetch(url).then(function (r) {
+            if (!r.ok) throw new Error("HTTP " + r.status);
+            return r.blob();
+          }).then(function (b) {
+            if (done) return; done = true; clearTimeout(timer); resolve(b);
+          }).catch(function (e) {
+            if (done) return; done = true; clearTimeout(timer); reject(e);
+          });
+        });
+      }
+      function downloadFile(url, filename, btn) {
+        var original = btn ? btn.textContent : "";
+        if (btn) { btn.disabled = true; btn.textContent = "در حال دریافت فایل…"; }
+        var candidates = cssCandidates(url);
+        var chain = Promise.reject(new Error("start"));
+        candidates.forEach(function (u) {
+          chain = chain.catch(function () { return fetchBlob(u, 20000); });
+        });
+        return chain.then(function (blob) {
+          var objUrl = URL.createObjectURL(blob);
+          var a = document.createElement("a");
+          a.href = objUrl;
+          a.download = filename || (url.split("/").pop() || "font");
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function () { URL.revokeObjectURL(objUrl); }, 5000);
+          if (btn) {
+            btn.textContent = "دانلود شد";
+            setTimeout(function () { btn.disabled = false; btn.textContent = original; }, 3000);
+          }
+          return true;
+        }).catch(function () {
+          if (btn) { btn.disabled = false; btn.textContent = original; }
+          window.open(url, "_blank", "noopener");
+          return false;
+        });
+      }
+      function wireDownloadButtons(scope) {
+        scope.querySelectorAll("[data-dl-url]").forEach(function (b) {
+          b.addEventListener("click", function () {
+            downloadFile(b.getAttribute("data-dl-url"), b.getAttribute("data-dl-name"), b);
+          });
+        });
+      }
+
+      /* ---------- font CSS injection (lazy, deduped, mirror-aware) ---------- */
+      var injected = {};
+      function cssCandidates(href) {
+        var hosts = ["cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net", "testingcf.jsdelivr.net"];
+        var list = [href];
+        var m = href.match(/^(https:\/\/)([^/]+)(\/.*)$/);
+        if (m && hosts.indexOf(m[2]) !== -1) {
+          hosts.forEach(function (h) {
+            var u = m[1] + h + m[3];
+            if (list.indexOf(u) === -1) list.push(u);
+          });
+          if (m[3].indexOf("/npm/") === 0) list.push("https://unpkg.com" + m[3].slice(4));
+        }
+        return list;
+      }
+      function injectCss(href) {
+        if (injected[href]) return injected[href];
+        var candidates = cssCandidates(href);
+        var p = new Promise(function (resolve, reject) {
+          var i = 0;
+          function next() {
+            if (i >= candidates.length) { reject(new Error("css mirrors failed")); return; }
+            var url = candidates[i++];
+            var l = document.createElement("link");
+            l.rel = "stylesheet"; l.href = url;
+            var done = false;
+            var timer = setTimeout(function () {
+              if (done) return; done = true; l.remove(); next();
+            }, 12000);
+            l.onload = function () { if (done) return; done = true; clearTimeout(timer); resolve(url); };
+            l.onerror = function () { if (done) return; done = true; clearTimeout(timer); l.remove(); next(); };
+            document.head.appendChild(l);
+          }
+          next();
+        });
+        p.catch(function () { /* failure is surfaced by checkLoaded's retries */ });
+        injected[href] = p;
+        return p;
+      }
+      function ensureFsFont(font, weight) {
+        var ps = [injectCss(NPM_CSS + font.id + "/index.css")];
+        if (weight && weight !== 400 && font.weights.indexOf(weight) !== -1) {
+          ps.push(injectCss(NPM_CSS + font.id + "/" + weight + ".css"));
+        }
+        if (font.styles.indexOf("italic") !== -1) {
+          ps.push(injectCss(NPM_CSS + font.id + "/italic.css"));
+        }
+        return Promise.all(ps.map(function (x) { return x.catch(function () { return null; }); }));
+      }
+      function checkLoaded(card, family, weight, cssPromise) {
+        if (!document.fonts || !document.fonts.load) return;
+        var spec = (weight || 400) + " 24px " + JSON.stringify(family);
+        var sample = (state.text || "Aa").slice(0, 24);
+        var attempts = 0;
+        function tryOnce() {
+          attempts++;
+          var loadP;
+          try { loadP = document.fonts.load(spec, sample); }
+          catch (e) { loadP = Promise.reject(e); }
+          var timeout = new Promise(function (res) { setTimeout(function () { res(null); }, 20000); });
+          Promise.race([loadP, timeout]).then(function (faces) {
+            if (faces && faces.length > 0) { card.classList.remove("failed"); return; }
+            if (attempts < 4) { setTimeout(tryOnce, 900 * attempts); return; }
+            var ok = false;
+            try { ok = document.fonts.check(spec, sample); } catch (e) { ok = false; }
+            if (ok) card.classList.remove("failed"); else card.classList.add("failed");
+          }).catch(function () {
+            if (attempts < 4) setTimeout(tryOnce, 900 * attempts);
+            else card.classList.add("failed");
+          });
+        }
+        if (cssPromise && typeof cssPromise.then === "function") {
+          cssPromise.then(function () { tryOnce(); }, function () { tryOnce(); });
+        } else {
+          tryOnce();
+        }
+      }
+
+      var io = ("IntersectionObserver" in window) ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (!en.isIntersecting) return;
+          var card = en.target;
+          io.unobserve(card);
+          var kind = card.getAttribute("data-kind");
+          if (kind === "fs") {
+            var f = state.byId[card.getAttribute("data-id")];
+            if (f) { checkLoaded(card, f.family, state.weight, ensureFsFont(f, state.weight)); }
+          } else if (kind === "gh") {
+            var repo = card.getAttribute("data-repo");
+            var g = state.gh[repo];
+            if (g && g.version) {
+              var cssP = injectCss(JSD_CDN + repo + "@" + g.version + "/dist/font-face.css");
+              checkLoaded(card, card.getAttribute("data-family"), state.weight, cssP);
+            }
+          }
+          var pv = card.querySelector(".preview");
+          if (pv) pv.classList.remove("pending");
+        });
+      }, { rootMargin: "500px 0px" }) : null;
+
+      /* ---------- Fontsource cards ---------- */
+      function fsCard(font) {
+        var card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("data-kind", "fs");
+        card.setAttribute("data-id", font.id);
+        var badges = "";
+        if (state.newIds[font.id]) badges += '<span class="badge new">تازه اضافه شده</span>';
+        if (state.updIds[font.id]) badges += '<span class="badge upd">به‌روز شده</span>';
+        if (font.variable) badges += '<span class="badge acc">متغیر</span>';
+        var subsets = font.subsets.map(function (s) {
+          return s === "arabic" ? "فارسی/عربی" : s;
+        }).join("، ");
+        card.innerHTML =
+          '<div class="card-top"><span class="fam">' + esc(font.family) + '</span>' + badges + '</div>' +
+          '<div class="preview pending" style="font-family:' + esc(JSON.stringify(font.family)) + ', Tahoma, sans-serif;">' + esc(state.text) + '</div>' +
+          '<div class="load-note">پیش‌نمایش این فونت بارگذاری نشد — چند CDN به‌صورت خودکار امتحان شدند و از شبکهٔ تو در دسترس نبودند. <button class="btn small" type="button" data-act="retry">تلاش دوباره</button></div>' +
+          '<div class="meta">' +
+            '<span>دسته: <b>' + esc(font.category) + '</b></span>' +
+            '<span>زیرمجموعه: <b>' + esc(subsets) + '</b></span>' +
+            '<span>وزن‌ها: <b>' + faNum(font.weights.length) + '</b></span>' +
+            '<span>مجوز: <b>' + esc(font.license) + '</b></span>' +
+            '<span>آخرین تغییر: <b>' + faDate(font.lastModified) + '</b></span>' +
+          '</div>' +
+          '<div class="card-actions">' +
+            '<button class="btn primary small" type="button" data-act="dl">دانلود فونت</button>' +
+            '<a class="btn small" href="https://fontsource.org/fonts/' + encodeURIComponent(font.id) + '" target="_blank" rel="noopener">صفحهٔ فونت</a>' +
+          '</div>';
+        card.querySelector('[data-act="dl"]').addEventListener("click", function () { openFsDialog(font); });
+        card.querySelector('[data-act="retry"]').addEventListener("click", function () {
+          card.classList.remove("failed");
+          delete injected[NPM_CSS + font.id + "/index.css"];
+          if (state.weight && state.weight !== 400) delete injected[NPM_CSS + font.id + "/" + state.weight + ".css"];
+          checkLoaded(card, font.family, state.weight, ensureFsFont(font, state.weight));
+        });
+        applyPreviewStyle(card);
+        if (io) io.observe(card); else { ensureFsFont(font, state.weight); card.querySelector(".preview").classList.remove("pending"); }
+        return card;
+      }
+
+      function applyPreviewStyle(card) {
+        var pv = card.querySelector(".preview");
+        if (!pv) return;
+        pv.textContent = state.text;
+        pv.style.fontSize = state.size + "px";
+        pv.style.fontWeight = state.weight;
+        pv.dir = hasArabic(state.text) ? "rtl" : "ltr";
+        pv.style.textAlign = "start";
+      }
+      function applyPreviewToAll() {
+        var cards = document.querySelectorAll(".card .preview");
+        for (var i = 0; i < cards.length; i++) {
+          var card = cards[i].closest(".card");
+          applyPreviewStyle(card);
+          // if a new weight was requested, load it for already-visible fs cards
+          if (card.getAttribute("data-kind") === "fs" && !card.querySelector(".preview").classList.contains("pending")) {
+            var f = state.byId[card.getAttribute("data-id")];
+            if (f) ensureFsFont(f, state.weight);
+          }
+        }
+        els.dlgPreview.textContent = state.text;
+        els.dlgPreview.style.fontWeight = state.weight;
+        els.dlgPreview.dir = hasArabic(state.text) ? "rtl" : "ltr";
+      }
+
+      /* ---------- filtering / rendering ---------- */
+      function filteredFonts() {
+        var q = state.query.trim().toLowerCase();
+        var out = state.fonts.filter(function (f) {
+          if (state.tab === "arabic" && f.subsets.indexOf("arabic") === -1) return false;
+          if (state.tab === "latin" && f.subsets.indexOf("latin") === -1) return false;
+          if (state.category && f.category !== state.category) return false;
+          if (state.varOnly && !f.variable) return false;
+          if (q && f.family.toLowerCase().indexOf(q) === -1 && f.id.indexOf(q) === -1) return false;
+          return true;
+        });
+        if (state.sort === "name") out.sort(function (a, b) { return a.family.localeCompare(b.family); });
+        else if (state.sort === "modified") out.sort(function (a, b) { return (b.lastModified || "").localeCompare(a.lastModified || ""); });
+        else if (state.sort === "weights") out.sort(function (a, b) { return b.weights.length - a.weights.length; });
+        return out;
+      }
+
+      function renderFs() {
+        var list = filteredFonts();
+        els.fsCount.textContent = list.length ? faNum(list.length) + " فونت" : "";
+        els.fsGrid.innerHTML = "";
+        var slice = list.slice(0, state.shown);
+        var frag = document.createDocumentFragment();
+        slice.forEach(function (f) { frag.appendChild(fsCard(f)); });
+        els.fsGrid.appendChild(frag);
+        els.fsEmpty.classList.toggle("show", list.length === 0 && state.fonts.length > 0);
+        els.more.style.display = list.length > state.shown ? "" : "none";
+      }
+
+      function buildCategories() {
+        var cats = {};
+        state.fonts.forEach(function (f) { cats[f.category] = true; });
+        var cur = els.cat.value;
+        els.cat.innerHTML = '<option value="">همهٔ دسته‌ها</option>';
+        Object.keys(cats).sort().forEach(function (c) {
+          var o = document.createElement("option");
+          o.value = c; o.textContent = c;
+          els.cat.appendChild(o);
+        });
+        els.cat.value = cur;
+      }
+
+      /* ---------- catalogue load + refresh diff ---------- */
+      function setStatus(mode, html) {
+        els.dot.className = "dot" + (mode === "live" ? " live" : mode === "err" ? " err" : "");
+        els.status.innerHTML = html;
+      }
+      function loadCatalogue(isRefresh) {
+        els.refresh.disabled = true;
+        els.refresh.classList.add("busy");
+        if (!isRefresh) setStatus("", "در حال خواندن کاتالوگ از Fontsource API…");
+        return fetchJson(FS_LIST).then(function (data) {
+          if (!Array.isArray(data)) throw new Error("bad payload");
+          var prevBaseline = state.baseline;
+          var newCount = 0, updCount = 0, newNames = [], updNames = [];
+          var newById = {};
+          data.forEach(function (f) { newById[f.id] = f; });
+          if (prevBaseline) {
+            data.forEach(function (f) {
+              if (!prevBaseline.has(f.id)) { state.newIds[f.id] = true; newCount++; if (newNames.length < 8) newNames.push(f.family); }
+              else if (prevBaseline.get(f.id) !== f.lastModified) { state.updIds[f.id] = true; updCount++; if (updNames.length < 8) updNames.push(f.family); }
+            });
+          } else {
+            var m = new Map();
+            data.forEach(function (f) { m.set(f.id, f.lastModified); });
+            state.baseline = m;
+          }
+          state.fonts = data;
+          state.byId = newById;
+          state.lastFetch = new Date();
+          els.fsSkeleton.style.display = "none";
+          els.error.classList.remove("show");
+          setStatus("live",
+            "<strong>" + faNum(data.length) + " فونت</strong> از Fontsource API خوانده شد • آخرین دریافت: " + faTime(state.lastFetch));
+          buildCategories();
+          renderFs();
+          if (isRefresh) {
+            if (newCount || updCount) {
+              var msg = "نتیجهٔ تازه‌سازی: ";
+              if (newCount) msg += "<strong>" + faNum(newCount) + " فونت تازه</strong> (" + esc(newNames.join("، ")) + (newCount > newNames.length ? " و…" : "") + ")";
+              if (newCount && updCount) msg += " • ";
+              if (updCount) msg += "<strong>" + faNum(updCount) + " فونت به‌روز شده</strong> (" + esc(updNames.join("، ")) + (updCount > updNames.length ? " و…" : "") + ")";
+              msg += " — روی کارت‌هایشان برچسب خورده است.";
+              els.diff.innerHTML = msg;
+              els.diff.classList.add("show");
+            } else {
+              els.diff.innerHTML = "نتیجهٔ تازه‌سازی ساعت " + faTime(new Date()) + ": فونت تازه یا به‌روزرسانی‌ای نسبت به دریافت اول این نشست پیدا نشد.";
+              els.diff.classList.add("show");
+            }
+          }
+          return true;
+        }).catch(function (err) {
+          if (!isRefresh && state.fonts.length === 0) {
+            els.fsSkeleton.style.display = "none";
+            setStatus("err", "خواندن کاتالوگ از Fontsource API نشد.");
+            els.error.innerHTML = "ارتباط با سرور کاتالوگ برقرار نشد (" + esc(err.message) + "). " +
+              "ممکن است این نشانی از شبکهٔ فعلی‌ات در دسترس نباشد. اینترنت را چک کن و «تلاش دوباره» را بزن." +
+              ' <button class="btn small" type="button" id="retryBtn">تلاش دوباره</button>';
+            els.error.classList.add("show");
+            var rb = $("retryBtn");
+            if (rb) rb.addEventListener("click", function () { loadCatalogue(false); });
+          } else {
+            els.diff.innerHTML = "تازه‌سازی ناموفق بود (" + esc(err.message) + ") — کاتالوگ قبلی همین نشست دست‌نخورده مانده است.";
+            els.diff.classList.add("show");
+          }
+          return false;
+        }).then(function (ok) {
+          els.refresh.disabled = false;
+          els.refresh.classList.remove("busy");
+          return ok;
+        });
+      }
+
+      /* ---------- GitHub watchlist ---------- */
+      function ghCard(repo) {
+        var family = repo.replace(/-font$/, "").replace(/^./, function (c) { return c.toUpperCase(); });
+        if (repo === "vazir-font") family = "Vazir";
+        var card = document.createElement("article");
+        card.className = "card";
+        card.setAttribute("data-kind", "gh");
+        card.setAttribute("data-repo", repo);
+        card.setAttribute("data-family", family);
+        card.innerHTML =
+          '<div class="card-top"><span class="fam">' + esc(family) + '</span><span class="fam-fa">' + esc(FA_NAMES[repo] || "") + '</span>' +
+          '<span class="badge" data-role="ver">در حال بررسی نسخه…</span>' +
+          '<span class="badge new" data-role="newver" style="display:none;">نسخهٔ تازه رسید</span></div>' +
+          '<div class="preview pending" style="font-family:' + esc(JSON.stringify(family)) + ', Tahoma, sans-serif;">' + esc(state.text) + '</div>' +
+          '<div class="load-note">پیش‌نمایش این فونت بارگذاری نشد — چند CDN به‌صورت خودکار امتحان شدند و از شبکهٔ تو در دسترس نبودند. <button class="btn small" type="button" data-act="retry">تلاش دوباره</button></div>' +
+          '<div class="meta"><span>منبع: <b>GitHub • rastikerdar/' + esc(repo) + '</b></span><span>مجوز: <b>OFL-1.1</b></span></div>' +
+          '<div class="card-actions">' +
+            '<button class="btn primary small" type="button" data-act="dl">دانلود فونت</button>' +
+            '<a class="btn small" href="https://github.com/rastikerdar/' + esc(repo) + '" target="_blank" rel="noopener">مخزن گیت‌هاب</a>' +
+          '</div>';
+        card.querySelector('[data-act="dl"]').addEventListener("click", function () { openGhDialog(repo, family); });
+        card.querySelector('[data-act="retry"]').addEventListener("click", function () {
+          card.classList.remove("failed");
+          var g = state.gh[repo];
+          if (g && g.version) {
+            var href = JSD_CDN + repo + "@" + g.version + "/dist/font-face.css";
+            delete injected[href];
+            checkLoaded(card, family, state.weight, injectCss(href));
+          }
+        });
+        applyPreviewStyle(card);
+        if (io) io.observe(card); else card.querySelector(".preview").classList.remove("pending");
+        return card;
+      }
+
+      function renderGh() {
+        els.ghGrid.innerHTML = "";
+        var frag = document.createDocumentFragment();
+        GH_REPOS.forEach(function (repo) { frag.appendChild(ghCard(repo)); });
+        els.ghGrid.appendChild(frag);
+      }
+
+      function pollGh(repo, isRefresh) {
+        return fetchJson(JSD_DATA + repo).then(function (data) {
+          var versions = (data && data.versions) || [];
+          if (!versions.length) throw new Error("no versions");
+          var latest = versions[0].version;
+          var prev = state.gh[repo] && state.gh[repo].version;
+          state.gh[repo] = { version: latest, files: null };
+          if (isRefresh && prev && prev !== latest) state.ghNewVer[repo] = latest;
+          if (!state.ghBaseline[repo]) state.ghBaseline[repo] = latest;
+          var card = els.ghGrid.querySelector('[data-repo="' + repo + '"]');
+          if (card) {
+            var ver = card.querySelector('[data-role="ver"]');
+            if (ver) ver.textContent = "نسخهٔ " + latest;
+            var nv = card.querySelector('[data-role="newver"]');
+            if (nv && state.ghNewVer[repo]) nv.style.display = "";
+            var ghCss = injectCss(JSD_CDN + repo + "@" + latest + "/dist/font-face.css");
+            card.querySelector(".preview").classList.remove("pending");
+            checkLoaded(card, card.getAttribute("data-family"), state.weight, ghCss);
+          }
+          return latest;
+        }).catch(function () {
+          state.gh[repo] = { version: null, error: true };
+          var card = els.ghGrid.querySelector('[data-repo="' + repo + '"]');
+          if (card) {
+            var ver = card.querySelector('[data-role="ver"]');
+            if (ver) ver.textContent = "نسخه نامشخص — مخزن در دسترس نیست";
+          }
+          return null;
+        });
+      }
+
+      function pollAllGh(isRefresh) {
+        var jobs = GH_REPOS.map(function (r) { return pollGh(r, isRefresh); });
+        return Promise.all(jobs).then(function (results) {
+          var ok = results.filter(Boolean).length;
+          els.ghCount.textContent = ok ? faNum(ok) + " مخزن در دسترس" : "";
+          els.ghEmpty.classList.toggle("show", ok === 0);
+          if (isRefresh) {
+            var news = Object.keys(state.ghNewVer);
+            if (news.length) {
+              els.diff.innerHTML = "نسخهٔ تازه برای این فونت‌های گیت‌هابی رسید: " +
+                news.map(function (r) { return esc(FA_NAMES[r] || r) + " ← " + esc(state.ghNewVer[r]); }).join("، ");
+              els.diff.classList.add("show");
+            }
+          }
+        });
+      }
+
+      function ghFiles(repo) {
+        var g = state.gh[repo];
+        if (!g || !g.version) return Promise.reject(new Error("no version"));
+        if (g.files) return Promise.resolve(g.files);
+        return fetchJson(JSD_DATA + repo + "@" + g.version + "?structure=flat").then(function (data) {
+          /* any font file anywhere in the repo counts (dist/, fonts/, …) */
+          var files = ((data && data.files) || []).map(function (f) { return f.name; })
+            .filter(function (p) { return /\.(ttf|woff2|woff)$/i.test(p); })
+            .sort();
+          g.files = files;
+          return files;
+        });
+      }
+
+      /* ---------- download dialog (options list can collapse) ---------- */
+      var dlCollapsed = false;
+      function setDlCollapsed(collapsed) {
+        dlCollapsed = !!collapsed;
+        els.dlgContent.classList.toggle("collapsed", dlCollapsed);
+        var note = $("dlCollapsedNote");
+        if (note) note.classList.toggle("show", dlCollapsed);
+        var btn = $("dlCollapseBtn");
+        var label = $("dlCollapseLabel");
+        if (btn) btn.setAttribute("aria-expanded", dlCollapsed ? "false" : "true");
+        if (label) label.textContent = dlCollapsed ? "نمایش گزینه‌ها" : "جمع کردن";
+      }
+      var dlCollapseBtn = $("dlCollapseBtn");
+      if (dlCollapseBtn) {
+        dlCollapseBtn.addEventListener("click", function () { setDlCollapsed(!dlCollapsed); });
+      }
+      function showDialog() {
+        setDlCollapsed(false);
+        if (typeof els.dlg.showModal === "function") els.dlg.showModal();
+        else els.dlg.setAttribute("open", "");
+      }
+      $("dlgClose").addEventListener("click", function () { els.dlg.close(); });
+      var dlgCloseX = $("dlgCloseX");
+      if (dlgCloseX) dlgCloseX.addEventListener("click", function () { els.dlg.close(); });
+
+      function openFsDialog(font) {
+        els.dlgFam.textContent = font.family;
+        els.dlgSrc.textContent = "Fontsource";
+        els.dlgPage.href = "https://fontsource.org/fonts/" + encodeURIComponent(font.id);
+        els.dlgPage.style.display = "";
+        els.dlgRepo.style.display = "none";
+        els.dlgPreview.style.fontFamily = JSON.stringify(font.family) + ", Tahoma, sans-serif";
+        els.dlgPreview.textContent = state.text;
+        els.dlgPreview.style.fontWeight = state.weight;
+        els.dlgPreview.dir = hasArabic(state.text) ? "rtl" : "ltr";
+        ensureFsFont(font, state.weight);
+        els.dlgMeta.innerHTML =
+          "<span>دسته: <b>" + esc(font.category) + "</b> • مجوز: <b>" + esc(font.license) + "</b> • آخرین تغییر در کاتالوگ: <b>" + faDate(font.lastModified) + "</b></span>";
+        els.dlgContent.innerHTML = '<div class="dlg-loading">در حال گرفتن نشانی فایل‌ها…</div>';
+        showDialog();
+        var cached = state.detailCache[font.id];
+        var p = cached ? Promise.resolve(cached) : fetchJson(FS_DETAIL + font.id).then(function (d) {
+          state.detailCache[font.id] = d; return d;
+        });
+        p.then(function (d) {
+          var subset = d.subsets.indexOf("arabic") !== -1 ? "arabic" : (d.defSubset || d.subsets[0]);
+          var rows = "";
+          Object.keys(d.variants).sort(function (a, b) { return Number(a) - Number(b); }).forEach(function (w) {
+            var styles = d.variants[w];
+            Object.keys(styles).forEach(function (st) {
+              var cell = styles[st][subset] || styles[st][d.defSubset] || styles[st][Object.keys(styles[st])[0]];
+              if (!cell || !cell.url) return;
+              var label = w + (st === "italic" ? " ایتالیک" : "");
+              var btns = "";
+              [["ttf", "TTF"], ["woff2", "WOFF2"], ["woff", "WOFF"]].forEach(function (fm) {
+                var u = cell.url[fm[0]];
+                if (!u) return;
+                var name = font.id + "-" + u.split("/").pop();
+                btns += '<button class="btn small" type="button" data-dl-url="' + esc(u) + '" data-dl-name="' + esc(name) + '">' + fm[1] + "</button>";
+              });
+              if (!btns) return;
+              rows += "<tr><td>" + esc(label) + "</td><td><div class=\"dl-links\">" + btns + "</div></td></tr>";
+            });
+          });
+          els.dlgMeta.innerHTML =
+            "<span>نسخهٔ فونت: <b>" + esc(d.version || "—") + "</b> • نسخهٔ بسته: <b>" + esc(d.npmVersion || "—") + "</b> • دسته: <b>" + esc(d.category) + "</b> • مجوز: <b>" + esc(d.license) + "</b></span>" +
+            "<span>زیرمجموعهٔ فایل‌ها: <b>" + esc(subset === "arabic" ? "فارسی/عربی (arabic)" : subset) + "</b> • آخرین تغییر: <b>" + faDate(d.lastModified) + "</b></span>";
+          els.dlgContent.innerHTML = rows
+            ? '<table class="dl-table"><thead><tr><th>وزن</th><th>دانلود فایل</th></tr></thead><tbody>' + rows + "</tbody></table>"
+            : '<div class="dlg-loading">برای این فونت فایلی در این زیرمجموعه پیدا نشد.</div>';
+          if (rows) wireDownloadButtons(els.dlgContent);
+        }).catch(function (err) {
+          els.dlgContent.innerHTML = '<div class="dlg-loading">گرفتن جزئیات فونت نشد (' + esc(err.message) + "). از صفحهٔ فونت در Fontsource می‌توانی فایل‌ها را بگیری.</div>";
+        });
+      }
+
+      function openGhDialog(repo, family) {
+        var g = state.gh[repo] || {};
+        els.dlgFam.textContent = family + " — " + (FA_NAMES[repo] || "");
+        els.dlgSrc.textContent = "GitHub";
+        els.dlgPage.style.display = "none";
+        els.dlgRepo.href = "https://github.com/rastikerdar/" + repo;
+        els.dlgRepo.style.display = "";
+        els.dlgPreview.style.fontFamily = JSON.stringify(family) + ", Tahoma, sans-serif";
+        els.dlgPreview.textContent = state.text;
+        els.dlgPreview.style.fontWeight = state.weight;
+        els.dlgPreview.dir = hasArabic(state.text) ? "rtl" : "ltr";
+        els.dlgMeta.innerHTML = "<span>مخزن: <b>rastikerdar/" + esc(repo) + "</b> • نسخهٔ فعلی: <b>" + esc(g.version || "—") + "</b> • مجوز: <b>OFL-1.1</b></span>";
+        els.dlgContent.innerHTML = '<div class="dlg-loading">در حال خواندن فهرست فایل‌های این نسخه…</div>';
+        showDialog();
+        ghFiles(repo).then(function (files) {
+          if (!files.length) {
+            els.dlgContent.innerHTML = '<div class="dlg-loading">در این نسخه فایل فونت (TTF/WOFF2) پیدا نشد؛ از مخزن گیت‌هاب بگیر.</div>';
+            return;
+          }
+          var rows = files.map(function (p) {
+            var name = p.split("/").pop();
+            var fmt = name.split(".").pop().toUpperCase();
+            return "<tr><td><bdi>" + esc(p.replace(/^\//, "")) + "</bdi></td><td><div class=\"dl-links\">" +
+              '<button class="btn small" type="button" data-dl-url="' + esc(JSD_CDN + repo + "@" + g.version + p) + '" data-dl-name="' + esc(name) + '">دانلود ' + esc(fmt) + "</button></div></td></tr>";
+          }).join("");
+          els.dlgContent.innerHTML = '<table class="dl-table"><thead><tr><th>فایل</th><th>دانلود فایل</th></tr></thead><tbody>' + rows + "</tbody></table>";
+          wireDownloadButtons(els.dlgContent);
+        }).catch(function (err) {
+          els.dlgContent.innerHTML = '<div class="dlg-loading">خواندن فهرست فایل‌ها نشد (' + esc(err.message) + "). از مخزن گیت‌هاب بگیر.</div>";
+        });
+      }
+
+      /* ---------- controls wiring ---------- */
+      var deckToggle = $("deckToggle");
+      if (deckToggle) {
+        deckToggle.addEventListener("click", function () {
+          var deck = document.querySelector(".deck");
+          var open = deck.classList.toggle("open");
+          deckToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      }
+      state.text = els.sample.value;
+      els.sample.addEventListener("input", function () {
+        state.text = els.sample.value || "متن نمونه";
+        applyPreviewToAll();
+      });
+      document.querySelectorAll("[data-preset]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          els.sample.value = b.getAttribute("data-preset");
+          state.text = els.sample.value;
+          applyPreviewToAll();
+        });
+      });
+      els.size.addEventListener("input", function () {
+        state.size = Number(els.size.value);
+        els.sizeOut.textContent = faNum(state.size) + " پیکسل";
+        applyPreviewToAll();
+      });
+      els.weight.addEventListener("change", function () {
+        state.weight = Number(els.weight.value);
+        applyPreviewToAll();
+      });
+      document.querySelectorAll(".tab").forEach(function (t) {
+        t.addEventListener("click", function () {
+          document.querySelectorAll(".tab").forEach(function (x) { x.setAttribute("aria-selected", "false"); });
+          t.setAttribute("aria-selected", "true");
+          state.tab = t.getAttribute("data-tab");
+          state.shown = PAGE_SIZE;
+          renderFs();
+        });
+      });
+      var searchTimer = null;
+      els.search.addEventListener("input", function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () {
+          state.query = els.search.value;
+          state.shown = PAGE_SIZE;
+          renderFs();
+          renderGhSearch();
+        }, 160);
+      });
+      els.cat.addEventListener("change", function () { state.category = els.cat.value; state.shown = PAGE_SIZE; renderFs(); });
+      els.sort.addEventListener("change", function () { state.sort = els.sort.value; state.shown = PAGE_SIZE; renderFs(); });
+      els.varToggle.addEventListener("click", function () {
+        state.varOnly = !state.varOnly;
+        els.varToggle.setAttribute("aria-pressed", state.varOnly ? "true" : "false");
+        state.shown = PAGE_SIZE;
+        renderFs();
+      });
+      els.more.addEventListener("click", function () { state.shown += PAGE_SIZE; renderFs(); });
+
+      function renderGhSearch() {
+        var q = state.query.trim().toLowerCase();
+        var cards = els.ghGrid.querySelectorAll(".card");
+        cards.forEach(function (card) {
+          var repo = card.getAttribute("data-repo");
+          var fam = (card.getAttribute("data-family") || "").toLowerCase();
+          var fa = FA_NAMES[repo] || "";
+          var show = !q || fam.indexOf(q) !== -1 || repo.indexOf(q) !== -1 || fa.indexOf(state.query.trim()) !== -1;
+          card.style.display = show ? "" : "none";
+        });
+      }
+
+      els.refresh.addEventListener("click", function () {
+        els.diff.classList.remove("show");
+        loadCatalogue(true);
+        pollAllGh(true);
+      });
+      els.interval.addEventListener("change", function () {
+        if (state.timer) { clearInterval(state.timer); state.timer = null; }
+        var ms = Number(els.interval.value);
+        if (ms > 0) {
+          state.timer = setInterval(function () {
+            loadCatalogue(true);
+            pollAllGh(true);
+          }, ms);
+        }
+      });
+
+      /* ---------- UI font fallback mirror ---------- */
+      setTimeout(function () {
+        if (!document.fonts || !document.fonts.check) return;
+        var ok = false;
+        try { ok = document.fonts.check('400 16px "Vazirmatn"', "زندگی"); } catch (e) { ok = false; }
+        if (!ok) {
+          injectCss("https://fastly.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/index.css");
+          injectCss("https://fastly.jsdelivr.net/npm/@fontsource/vazirmatn@5.3.0/700.css");
+        }
+      }, 5000);
+
+      /* ---------- go ---------- */
+      renderGh();
+      loadCatalogue(false);
+      pollAllGh(false);
+    })();
+    </script>
+  </body>
+</html>
