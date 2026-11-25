@@ -353,7 +353,7 @@
 
       /* ---------- mobile / phone layout ---------- */
       .deck-toggle {
-        display: none; width: 100%; margin-top: 10px;
+        display: flex; width: 100%; margin-top: 10px;
         align-items: center; justify-content: space-between; gap: 8px;
         border: 1px solid var(--line-strong); background: var(--surface); color: var(--ink);
         border-radius: 8px; padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: .9rem;
@@ -361,6 +361,29 @@
       }
       .deck-toggle svg { flex: none; transition: transform .18s ease; }
       .deck.open .deck-toggle svg { transform: rotate(180deg); }
+      /* collapsible settings at every width: when folded, everything folds
+         away — subtitle, the whole sample row (preview text, presets, size/
+         weight panel) and the whole toolbar (script tabs, search, category/
+         sort selects, variable-only toggle). The deck shrinks to one slim
+         bar: a smaller brand, an icon-only theme button and the toggle,
+         side by side; the deck starts folded */
+      .deck:not(.open) .sub,
+      .deck:not(.open) .sample-row,
+      .deck:not(.open) .presets,
+      .deck:not(.open) .sliders,
+      .deck:not(.open) .toolbar { display: none; }
+      .deck:not(.open) {
+        display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+        padding: 8px 0;
+      }
+      .deck:not(.open) .deck-head { flex: 1 1 auto; gap: 10px; justify-content: flex-start; }
+      .deck:not(.open) h1 .brand { font-size: 2rem; line-height: 1.1; }
+      .deck:not(.open) .theme-toggle { min-height: 2.25rem; padding: 4px 10px; }
+      .deck:not(.open) .theme-toggle #themeLabel { display: none; }
+      .deck:not(.open) .deck-toggle {
+        flex: 1 1 220px; width: auto; margin-top: 0;
+        min-height: 2.5rem; padding: 6px 14px;
+      }
       button, .chip, .tab, select, input { touch-action: manipulation; }
       body { -webkit-tap-highlight-color: transparent; }
 
@@ -370,7 +393,7 @@
           padding-left: max(12px, env(safe-area-inset-left));
           padding-right: max(12px, env(safe-area-inset-right));
         }
-        /* compact sticky deck: title + sample text + tabs + search stay,
+        /* compact sticky deck: title + sample text stay visible,
            everything else folds behind the toggle */
         .deck { padding: calc(10px + env(safe-area-inset-top, 0px)) 0 8px; }
         .deck h1 { font-size: .98rem; margin: 0; }
@@ -382,10 +405,15 @@
         .sample-box { flex: none; }
         #sampleText { font-size: 1rem; padding: 9px 12px; }
         .deck-toggle { display: flex; }
+        .deck:not(.open) .sub,
+        .deck:not(.open) .sample-row,
         .deck:not(.open) .presets,
         .deck:not(.open) .sliders,
-        .deck:not(.open) .toolbar .ctl,
-        .deck:not(.open) #varToggle { display: none; }
+        .deck:not(.open) .toolbar { display: none; }
+        .deck:not(.open) { padding: calc(8px + env(safe-area-inset-top, 0px)) 0 6px; gap: 8px; }
+        .deck:not(.open) h1 .brand { font-size: 1.75rem; }
+        .deck:not(.open) .theme-toggle { min-height: 2.25rem; padding: 4px 9px; }
+        .deck:not(.open) .deck-toggle { flex: 1 1 100%; min-height: 2.5rem; }
         .presets { margin-top: 2px; }
         .presets .chip { flex: 1 1 auto; }
         .sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; padding: 10px 12px; margin-top: 10px; }
@@ -1255,9 +1283,12 @@
       /* ---------- controls wiring ---------- */
       var deckToggle = $("deckToggle");
       if (deckToggle) {
+        var deckEl = document.querySelector(".deck");
+        // settings start folded at every width — folded, the deck is one
+        // slim bar (brand + this toggle); one click expands everything,
+        // including the sample text
         deckToggle.addEventListener("click", function () {
-          var deck = document.querySelector(".deck");
-          var open = deck.classList.toggle("open");
+          var open = deckEl.classList.toggle("open");
           deckToggle.setAttribute("aria-expanded", open ? "true" : "false");
         });
       }
